@@ -1,4 +1,8 @@
-Groundwater trends in France (2005–2025)
+```md
+![Groundwater map](assets/map_preview.png)
+```
+
+# Groundwater trends in France (2005–2025)
 
 This project explores long-term groundwater level trends across France using 1,080 monitoring stations from the national network.
 
@@ -6,16 +10,14 @@ The objective is simple in appearance, but methodologically challenging:
 
 How to transform point-based groundwater observations into a spatial representation that remains physically meaningful?
 
-=========
+## Key output
 
-Key output
 	•	National map of 20-year groundwater trends
 	•	Interactive HTML version for exploration
 	•	Aggregated dataset by hydrogeological entity
 
-=========
 
-The challenge
+## The challenge
 
 Groundwater data is inherently sparse and unevenly distributed.
 
@@ -28,9 +30,8 @@ Two core questions therefore emerged:
 	1.	How to measure groundwater trends robustly for each station?
 	2.	How to aggregate them spatially without introducing artefacts?
 
-=========
 
-Methodological framework
+## Methodological framework
 
 This project is structured around three key methodological decisions.
 
@@ -115,9 +116,8 @@ Coverage
 	•	Although this represents only 63.5% of entities, these account for 82.9% of the total mapped surface area.
 	•	The uncovered entities are therefore likely to be smaller and more localized on average, which limits their effect on the macro-scale interpretation of the map.
 
-=========
 
-Interpretation
+## Interpretation
 
 The resulting map represents a macro-level signal of groundwater evolution.
 
@@ -128,9 +128,9 @@ It should be interpreted as:
 
 It does not aim to describe local conditions or short-term dynamics.
 
-=========
 
-Limitations
+## Limitations
+
 	•	heterogeneous station density across regions
 	•	some hydrogeological entities are spatially fragmented
 	•	aggregation may smooth internal variability
@@ -138,9 +138,9 @@ Limitations
 
 This work is therefore best suited for macro-scale interpretation, not local prediction.
 
-=========
 
-Outputs
+## Outputs
+
 • PNG map (static)
 • HTML map (interactive)
 • GeoJSON datasets:
@@ -152,9 +152,8 @@ Outputs
   • station → polygon → outcropping aquifer assignment
   • aggregation by hydrogeological entity
 
-=========
 
-Repository structure
+## Repository structure
 
 groundwater-france-trends/
   assets/        # images used in documentation
@@ -165,9 +164,8 @@ groundwater-france-trends/
   scripts/       # execution pipeline
   src/           # reusable modules
 
-=========
 
-How to run
+## How to run
 
 python scripts/01_compute_station_trends.py
 python scripts/04_generate_maps.py
@@ -176,9 +174,8 @@ Data sources
 	•	ADES – French groundwater monitoring network
 	•	BDLISA – BRGM hydrogeological database
 
-=========
 
-Author
+## Author
 
 Edward Vizard
 Parallaxe processing
