@@ -1,6 +1,6 @@
 ## Groundwater trends in France (2005–2025)
 
-👉 **Preview the map**:  
+👉 **Map Overview**:  
 
 ![Groundwater trends map](assets/images/map_preview.png)
 
