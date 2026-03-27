@@ -1,8 +1,9 @@
-```md
-![Groundwater map](assets/map_preview.png)
-```
+## Groundwater trends in France (2005–2025)
 
-# Groundwater trends in France (2005–2025)
+👉 **Preview the map**:  
+https://ton-lien-html
+
+[![Groundwater trends map](assets/images/groundwater-france-preview.png)](https://ton-lien-html)
 
 This project explores long-term groundwater level trends across France using 1,080 monitoring stations from the national network.
 
