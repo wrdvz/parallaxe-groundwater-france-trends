@@ -28,8 +28,8 @@ Each station captures a local signal, but:
 - measurements are noisy and seasonal
 
 Two core questions therefore emerged:
-	1.	How to measure groundwater trends robustly for each station?
-	2.	How to aggregate them spatially without introducing artefacts?
+1.	How to measure groundwater trends robustly for each station?
+2.	How to aggregate them spatially without introducing artefacts?
 
 
 ## Methodological framework
