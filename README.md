@@ -162,14 +162,14 @@ groundwater-france-trends/
 ├── outputs/       # maps and exports
 ├── scripts/       # execution pipeline
 └── src/           # reusable modules
-
+```
 
 ## How to run
 
 python scripts/01_compute_station_trends.py
 python scripts/04_generate_maps.py
 
-Data sources
+Data sources 
 - ADES – French groundwater monitoring network
 - BDLISA – BRGM hydrogeological database
 
