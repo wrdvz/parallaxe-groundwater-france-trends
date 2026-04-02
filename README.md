@@ -153,14 +153,15 @@ This work is therefore best suited for macro-scale interpretation, not local pre
 
 ## Repository structure
 
+```bash
 groundwater-france-trends/
-	assets/        # images used in documentation
-	data/          # raw and processed data (partially versioned)
-	docs/          # methodological notes
-	notebooks/     # exploratory analysis
-	outputs/       # maps and exports
-	scripts/       # execution pipeline
-	src/           # reusable modules
+├── assets/        # images used in documentation
+├── data/          # raw and processed data (partially versioned)
+├── docs/          # methodological notes
+├── notebooks/     # exploratory analysis
+├── outputs/       # maps and exports
+├── scripts/       # execution pipeline
+└── src/           # reusable modules
 
 
 ## How to run
