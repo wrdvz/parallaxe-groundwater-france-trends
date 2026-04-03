@@ -166,8 +166,8 @@ groundwater-france-trends/
 
 ## How to run
 
-python scripts/01_compute_station_trends.py
-python scripts/04_generate_maps.py
+- python scripts/01_compute_station_trends.py
+- python scripts/04_generate_maps.py
 
 Data sources 
 - ADES – French groundwater monitoring network
@@ -176,7 +176,7 @@ Data sources
 
 ## Author
 
-Edward Vizard
+Edward Vizard  
 Parallaxe processing
 
 
