@@ -145,18 +145,14 @@ This work is therefore best suited for macro-scale interpretation, not local pre
 
 ## Pipeline overview
 
-1. Data acquisition
-
-00_fetch_hubeau_to_duckdb.py  
+1. Data acquisition: 00_fetch_hubeau_to_duckdb.py  
 
 Output (path: data/raw/water/):
-	•	Local DuckDB database containing raw station time series
+- Local DuckDB database containing raw station time series
 
 This database is used as the input for subsequent processing steps.
 
-2. Trend estimation & spatial aggregation
-
-01_compute_stations_trends.py  
+2. Trend estimation & spatial aggregation: 01_compute_stations_trends.py  
 
 Outputs (path: data/processed/mapping/):
 - Station-level trend dataset: network70_station_to_polyg_affleurant_nv1_2005_2025.csv
@@ -164,9 +160,7 @@ Outputs (path: data/processed/mapping/):
 - GeoJSON dissolved hydrogeological entities (full geometry): bdlisa_eh_nv1_dissolved_2005_2025.geojson
 - GeoJSON dissolved hydrogeological entities (simplified web version): bdlisa_eh_nv1_dissolved_light_2005_2025.geojson
 
-3. Publication layer
-
-02_generate_maps.py 
+3. Publication layer: 02_generate_maps.py 
 
 Outputs (path: docs/)
 - Interactive HTML map: index.html
@@ -209,7 +203,6 @@ The following layers are used:
 - POLYG_ELEMENTAIRES
 - ENTITES_NIVEAU1
 - TABLE_PILE_ENTITES_NIV1
-
 - Data owner: BRGM
 - Dataset: BDLISA
 
