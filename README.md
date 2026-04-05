@@ -4,6 +4,11 @@
 
 ![Groundwater trends map](assets/images/map_preview.png)
 
+## 🌍 Interactive Map
+
+👉 **See the interactive map**  
+https://wrdvz.github.io/parallaxe-groundwater-france-trends/
+
 
 This project explores long-term groundwater level trends across France using 1,080 monitoring stations from the national network.
 
@@ -166,13 +171,13 @@ groundwater-france-trends/
 
 ## How to run
 
-- python scripts/01_compute_station_trends.py
-- python scripts/04_generate_maps.py
+python 00_fetch_hubeau_to_duckdb.py
+python 01_compute_stations_trends.py
+python 02_generate_maps.py
 
 Data sources 
 - ADES – French groundwater monitoring network
 - BDLISA – BRGM hydrogeological database
-
 
 ## Author
 
