@@ -173,11 +173,9 @@ Outputs (path: docs/)
 
 ```bash
 groundwater-france-trends/
-├── assets/        # images used in documentation
-├── data/          # raw and processed data (partially versioned)
-├── docs/          # methodological notes
-├── notebooks/     # exploratory analysis
-├── outputs/       # maps and exports
+├── assets/        # assets used in documentation
+├── data/          # raw and processed data
+├── docs/          # public outputs
 ├── scripts/       # execution pipeline
 └── src/           # reusable modules
 ```
