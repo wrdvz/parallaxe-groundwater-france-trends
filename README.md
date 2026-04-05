@@ -14,11 +14,12 @@ The objective is simple in appearance, but methodologically challenging:
 
 How to transform point-based groundwater observations into a spatial representation that remains physically meaningful?
 
-## Key output
+## Key output 
 
-- National map of 20-year groundwater trends
-- Interactive HTML version for exploration
-- Aggregated dataset by hydrogeological entity
+In the docs file, you will find:
+- National map of 20-year groundwater trends: parallaxe_groundwater_france_trends_2005_2025.png
+- Interactive HTML version for exploration: index.html
+- Aggregated dataset by hydrogeological entity: network70_affleurant_nv1_agg_2005_2025.csv
 
 
 ## The challenge
@@ -65,7 +66,7 @@ Before addressing spatial aggregation, several approaches were tested to define 
 
 Tested approaches
 - Simple difference (2005 → 2025): Too sensitive to start/end conditions, ignores variability
-- Regressions on annual-means: Unstable and noisy estimates, ignores seasonality
+- Raw regression on monthly observations: Strongly affected by seasonality and short-term variability
 - Winter recharge metrics: Strongly influenced by interannual climate variability
 
 Selected approach
@@ -90,10 +91,10 @@ Several approaches were considered:
 - interpolation (IDW): visually smooth, but physically artificial
 - regular grids: simple, but geologically arbitrary
 - watersheds: hydrologically relevant, but not aligned with groundwater systems
-- multi-layer BDLISA: rich, but ambiguous due to overlapping units
+- multi-layer hydrogeological units: rich, but ambiguous due to overlapping units
 
 Selected approach
-Exclusive hydrogeological units from BDLISA (NV1 outcropping entities)
+Exclusive hydrogeological entities from BDLISA (NV1 outcropping units)
 
 This approach combines geometry and geology:
 
@@ -132,7 +133,7 @@ It does not aim to describe local conditions or short-term dynamics.
 
 ## Limitations
 
-- heterogeneous station density across regions
+- heterogeneous station density across exclusive hydrogeological entities
 - some hydrogeological entities are spatially fragmented
 - aggregation may smooth internal variability
 - no explicit uncertainty modelling beyond station count
@@ -142,17 +143,35 @@ This work is therefore best suited for macro-scale interpretation, not local pre
 
 ## Outputs
 
-- PNG map (static)
-- HTML map (interactive)
-- GeoJSON datasets:
-	- dissolved hydrogeological entities (full geometry)
-	- dissolved hydrogeological entities (simplified web version)
-- CSV datasets:
-	- station-level trends (annual-mean regression, 2005–2025)
-	- polygon → outcropping aquifer mapping
-	- station → polygon → outcropping aquifer assignment
-	- aggregation by hydrogeological entity
+## Pipeline overview
 
+1. Data acquisition
+
+00_fetch_hubeau_to_duckdb.py  
+
+Output (path: data/raw/water/):
+	•	Local DuckDB database containing raw station time series
+
+This database is used as the input for subsequent processing steps.
+
+2. Trend estimation & spatial aggregation
+
+01_compute_stations_trends.py  
+
+Outputs (path: data/processed/mapping/):
+- Station-level trend dataset: network70_station_to_polyg_affleurant_nv1_2005_2025.csv
+- Polygon to aquifer mapping: bdlisa_polyg_affleurant_nv1_2005_2025.csv
+- GeoJSON dissolved hydrogeological entities (full geometry): bdlisa_eh_nv1_dissolved_2005_2025.geojson
+- GeoJSON dissolved hydrogeological entities (simplified web version): bdlisa_eh_nv1_dissolved_light_2005_2025.geojson
+
+3. Publication layer
+
+02_generate_maps.py 
+
+Outputs (path: docs/)
+- Interactive HTML map: index.html
+- Static PNG map: parallaxe_groundwater_france_trends_2005_2025.png
+- Aggregated dataset by hydrogeological entity: network70_affleurant_nv1_agg_2005_2025.csv
 
 ## Repository structure
 
@@ -167,15 +186,32 @@ groundwater-france-trends/
 └── src/           # reusable modules
 ```
 
-## How to run
 
-python 00_fetch_hubeau_to_duckdb.py  
-python 01_compute_stations_trends.py  
-python 02_generate_maps.py  
+## Data sources
 
-Data sources 
-- ADES – French groundwater monitoring network
-- BDLISA – BRGM hydrogeological database
+Groundwater level time series
+
+Groundwater level observations are sourced from the national ADES database (BRGM), which centralizes groundwater monitoring data for France.
+
+Data are accessed programmatically via the Hubeau API (EauFrance), which provides structured access to ADES time series.
+- Data owner: BRGM
+- Database: ADES
+- Access channel: Hubeau API (hubeau.eaufrance.fr)
+- Network used: Réseau 070
+
+⸻
+
+Hydrogeological reference framework
+
+Spatial hydrogeological entities are derived from BDLISA (BRGM), the national hydrogeological reference database.
+
+The following layers are used:
+- POLYG_ELEMENTAIRES
+- ENTITES_NIVEAU1
+- TABLE_PILE_ENTITES_NIV1
+
+- Data owner: BRGM
+- Dataset: BDLISA
 
 ## Author
 
