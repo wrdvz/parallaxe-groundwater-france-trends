@@ -141,7 +141,7 @@ It does not aim to describe local conditions or short-term dynamics.
 This work is therefore best suited for macro-scale interpretation, not local prediction.
 
 
-## Pipeline overview
+## Pipeline & Outputs
 
 1. Data acquisition: 00_fetch_hubeau_to_duckdb.py  
 
