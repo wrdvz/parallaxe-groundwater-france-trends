@@ -22,7 +22,7 @@ In the docs file, you will find:
 - Aggregated dataset by hydrogeological entity: network70_affleurant_nv1_agg_2005_2025.csv
 
 
-## The challenge
+## The challenge 
 
 Groundwater data is inherently sparse and unevenly distributed.
 
@@ -152,6 +152,8 @@ Output (path: data/raw/water/):
 
 This database is used as the input for subsequent processing steps.
 
+⸻
+
 2. Trend estimation & spatial aggregation: 01_compute_stations_trends.py  
 
 Outputs (path: data/processed/mapping/):
@@ -159,6 +161,8 @@ Outputs (path: data/processed/mapping/):
 - Polygon to aquifer mapping: bdlisa_polyg_affleurant_nv1_2005_2025.csv
 - GeoJSON dissolved hydrogeological entities (full geometry): bdlisa_eh_nv1_dissolved_2005_2025.geojson
 - GeoJSON dissolved hydrogeological entities (simplified web version): bdlisa_eh_nv1_dissolved_light_2005_2025.geojson
+
+⸻
 
 3. Publication layer: 02_generate_maps.py 
 
@@ -183,7 +187,7 @@ groundwater-france-trends/
 
 ## Data sources
 
-Groundwater level time series
+1. Groundwater level time series
 
 Groundwater level observations are sourced from the national ADES database (BRGM), which centralizes groundwater monitoring data for France.
 
@@ -195,7 +199,7 @@ Data are accessed programmatically via the Hubeau API (EauFrance), which provide
 
 ⸻
 
-Hydrogeological reference framework
+2. Hydrogeological reference framework
 
 Spatial hydrogeological entities are derived from BDLISA (BRGM), the national hydrogeological reference database.
 
