@@ -169,9 +169,9 @@ groundwater-france-trends/
 
 ## How to run
 
-python 00_fetch_hubeau_to_duckdb.py
-python 01_compute_stations_trends.py
-python 02_generate_maps.py
+python 00_fetch_hubeau_to_duckdb.py  
+python 01_compute_stations_trends.py  
+python 02_generate_maps.py  
 
 Data sources 
 - ADES – French groundwater monitoring network
