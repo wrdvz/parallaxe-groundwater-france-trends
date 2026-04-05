@@ -4,8 +4,6 @@
 
 ![Groundwater trends map](assets/images/map_preview.png)
 
-## 🌍 Interactive Map
-
 👉 **See the interactive map**  
 https://wrdvz.github.io/parallaxe-groundwater-france-trends/
 
